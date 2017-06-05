@@ -1,0 +1,13 @@
+1) Create config file {json/csv/pickle}
+2) 1 pynb with
+	a) LM model
+	b) Random forest model
+	c) NN feed forward model
+	
+	Root mean square - cross validation (see what this is)
+	
+	log all the data
+	
+	PMML
+
+3) Luigi pipeline
