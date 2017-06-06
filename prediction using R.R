@@ -30,17 +30,17 @@ confusionMatrix(pred.fit.glm, test.set$snp_log_return_positive, positive = "1")
 model<-glm(snp_log_return_positive~snp_log_return_1+
              nyse_log_return_1+
              djia_log_return_1+
-             nikkei_log_return_1+
-             hangseng_log_return_1+
-             ftse_log_return_1+
-             dax_log_return_1+
-             aord_log_return_1,
+             nikkei_log_return_0+
+             hangseng_log_return_0+
+             ftse_log_return_0+
+             dax_log_return_0+
+             aord_log_return_0,
            data=training.set,family = binomial)
 scores <- predict(model, newdata = test.set, type= "response")
 pred.fit.glm <- ifelse(scores>0.5, 1, 0)
 confusionMatrix(pred.fit.glm, test.set$snp_log_return_positive, positive = "1")
 
-# Accuracy of 51.39 %
+# Accuracy of 72.5 %
 #########################################
 
 ########################################
@@ -51,7 +51,8 @@ index<-sample(seq_len(nrow(stock)),size=0.75*nrow(stock))
 training.set<-stock[index,]
 test.set<-stock[-index,]
 
-# Model 3, 4 and 5
+################################################
+# Model 3
 model<-lm(snp_close_scaled~nyse_close_scaled+djia_close_scaled+nikkei_close_scaled+
              hangseng_close_scaled+ftse_close_scaled+
              dax_close_scaled+aord_close_scaled,
