@@ -1,0 +1,33 @@
+2017-06-07 13:10:17,758:INFO:This is an info message
+2017-06-07 13:10:34,949:INFO:This is an info message
+2017-06-07 13:10:34,949:WARNING:This is a warning message
+2017-06-07 13:10:34,949:ERROR:This is an error message
+2017-06-07 13:10:34,949:CRITICAL:This is a critical error message
+2017-06-07 13:11:07,002:INFO:This is an info message
+2017-06-07 13:11:07,002:WARNING:This is a warning message
+2017-06-07 13:11:07,002:ERROR:This is an error message
+2017-06-07 13:11:07,002:CRITICAL:This is a critical error message
+2017-06-07 13:12:11,396:INFO:__main__:This is an info message
+2017-06-07 13:12:11,396:WARNING:__main__:This is a warning message
+2017-06-07 13:12:11,396:ERROR:__main__:This is an error message
+2017-06-07 13:12:11,396:CRITICAL:__main__:This is a critical error message
+2017-06-07 13:21:00,535:INFO:__main__:This is an info message
+2017-06-07 13:21:00,535:WARNING:__main__:This is a warning message
+2017-06-07 13:21:00,535:ERROR:__main__:This is an error message
+2017-06-07 13:21:00,535:CRITICAL:__main__:This is a critical error message
+2017-06-07 13:21:19,972:INFO:__main__:This is an info message
+2017-06-07 13:21:19,972:WARNING:__main__:This is a warning message
+2017-06-07 13:21:19,972:ERROR:__main__:This is an error message
+2017-06-07 13:21:19,972:CRITICAL:__main__:This is a critical error message
+2017-06-07 13:21:36,350:INFO:__main__:This is an info message
+2017-06-07 13:21:36,350:WARNING:__main__:This is a warning message
+2017-06-07 13:21:36,350:ERROR:__main__:This is an error message
+2017-06-07 13:21:36,350:CRITICAL:__main__:This is a critical error message
+2017-06-07 13:21:55,656:INFO:__main__:This is an info message
+2017-06-07 13:21:55,656:WARNING:__main__:This is a warning message
+2017-06-07 13:21:55,656:ERROR:__main__:This is an error message
+2017-06-07 13:21:55,656:CRITICAL:__main__:This is a critical error message
+2017-06-07 13:22:11,548:INFO:__main__:This is an info message
+2017-06-07 13:22:11,548:WARNING:__main__:This is a warning message
+2017-06-07 13:22:11,549:ERROR:__main__:This is an error message
+2017-06-07 13:22:11,549:CRITICAL:__main__:This is a critical error message
