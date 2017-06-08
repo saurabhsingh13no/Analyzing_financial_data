@@ -7,6 +7,7 @@ Author: QuantUniversity : SS
 """
 
 # Libraries used in the code
+
 import pandas as pd
 import numpy as np
 from pandas.plotting import autocorrelation_plot,scatter_matrix
@@ -16,8 +17,10 @@ from sklearn.linear_model import LogisticRegression,LinearRegression
 from sklearn import metrics
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.cross_validation import cross_val_score
-from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier,MLPRegressor
+import logging
+
+
 
 """Super class defining dataset"""
 class Dataset:
@@ -38,7 +41,12 @@ class Dataset:
             self.filename=filename
         filename=self.filename
         matplotlib.style.use('ggplot')
-        cd = pd.read_pickle("./"+filename)
+        try:
+            cd = pd.read_pickle("./"+filename)
+        except Exception as e:
+            print ("cannot open File. Please check the name again. Thanks")
+            logger.error("cannot open file %s",filename)
+
         cd = cd.sort_index()
         self.cd=cd
         return self.cd.copy()
@@ -65,7 +73,6 @@ class Dataset:
 
     def extractData_helper(self):
         cd=Dataset.extractData(self)
-        print (self.cd.head())
 
         self.modify_closing_date()
 
@@ -382,6 +389,8 @@ class linear_model(Dataset):
 
     # Predicting the S&P index value using Linear Regression
     def linearRegression(self):
+
+        logger.debug("Running Linear regression analysis")
         if len(self.cd)<=0:
             Dataset.extractData(self)
             Dataset.modify_closing_date(self)
@@ -409,6 +418,8 @@ class linear_model(Dataset):
         print ("\nRunning Linear Regression Analysis")
         print("Mean squared error: ",
               np.mean((predicted - test_classes_tf.as_matrix()[:, 0]) ** 2))
+        logger.debug("Mean squared error: %s",
+              np.mean((predicted - test_classes_tf.as_matrix()[:, 0]) ** 2))
 
         SSE = np.sum((regr.predict(test_predictors_tf.as_matrix()) -
                       test_classes_tf.as_matrix()[:, 0]) ** 2)
@@ -418,20 +429,28 @@ class linear_model(Dataset):
         RMSE = np.sqrt(SSE / len(test_classes_tf.as_matrix()[:, 0]))
 
         print("R squared value: ", R2)
+        logger.debug("R squared value: %s", R2)
         print("Root Mean Squared Error: ", RMSE)
+        logger.debug("Root Mean Squared Error: %s", RMSE)
 
         # Step 5) Plot the  outputs
-        plt.figure(figsize=(10, 5))
-        plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0])))
-                 , test_classes_tf.as_matrix()[:, 0],
-                 color='red', label='Test Data', linewidth=2)
-        plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
-                 regr.predict(test_predictors_tf.as_matrix()), color='blue',
-                 linewidth=2, label="Predicted Data")
-        plt.xlabel("Data Points")
-        plt.ylabel("snp_close_scaled")
-        plt.legend(loc='upper left')
-        plt.show()
+        try:
+            plt.figure(figsize=(10, 5))
+            plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0])))
+                     , test_classes_tf.as_matrix()[:, 0],
+                     color='red', label='Test Data', linewidth=2)
+            plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
+                     regr.predict(test_predictors_tf.as_matrix()), color='blue',
+                     linewidth=2, label="Predicted Data")
+            plt.xlabel("Data Points")
+            plt.ylabel("snp_close_scaled")
+            plt.legend(loc='upper left')
+            plt.title("Stock index value v/s Data points")
+            plt.show()
+            logger.debug("Graph plotted - Stock index value v/s Data Points")
+        except Exception as e:
+            print("Failed to plot graph. Check logs")
+            logger.error("%s error occured while plotting graph",e)
 
 
 
@@ -445,6 +464,8 @@ class linear_model(Dataset):
     # Predicting the S&P trend(whether it will go up or down)
     # using Logistic Regression
     def logistic_regression(self):
+
+        logger.debug("Running Logistic regression Model")
 
         if len(self.getLogReturnData())<=0:
             self.extractData()
@@ -470,6 +491,7 @@ class linear_model(Dataset):
         temp = predicted == test_classes_tf.as_matrix()[:, 0]
         accuracy = len(temp[temp == True]) / len(temp)
         print("\nAccuracy using Logistic Regression Model = ", accuracy, "\n")
+        logger.debug("Accuracy using Logistic Regression Model = %s", accuracy)
 
         # Or you can combine Step 3 and Step 4 into one using below state
         # print ("Accuracy using Logistic Regression Model = ",
@@ -485,6 +507,8 @@ class linear_model(Dataset):
                                  training_classes_tf.as_matrix()[:, 0],
                                  scoring='accuracy', cv=10)
         print("Mean accuracy validated using Cross Validation: ",
+              scores.mean())
+        logger.debug("Mean accuracy validated using Cross Validation: %s",
               scores.mean())
 
 
@@ -509,6 +533,7 @@ class ensemble(Dataset):
     # using RandomForestClassifier
     def randomForestClassifier(self):
 
+        logger.debug("Running Random Forest Classifier Analysis")
         if len(self.getLogReturnData())<=0:
             self.extractData()
 
@@ -533,6 +558,8 @@ class ensemble(Dataset):
         accuracy = len(temp[temp == True]) / len(temp)
         print("\nAccuracy using Random Forest Classifier Model = ",
               accuracy, "\n")
+        logger.debug("Accuracy using Random Forest Classifier Model =  %s",
+              accuracy)
 
         # Or you can combine Step 3 and Step 4 into one using below state
         # print ("Accuracy using Random Forest Classifier Model = ",
@@ -552,11 +579,14 @@ class ensemble(Dataset):
             scoring='accuracy', cv=10)
         print("Mean accuracy validated using Cross Validation: ",
               scores.mean())
+        logger.debug("Mean accuracy validated using Cross Validation: %s",
+              scores.mean())
 
     # Predicting the S&P trend(whether it will go up or down)
     # using RandomForestRegressor
     def randomForestRegressor(self):
 
+        logger.debug("Running Random Forest Regressor Analysis")
         if len(self.cd)<=0:
             Dataset.extractData(self)
             Dataset.modify_closing_date(self)
@@ -582,7 +612,10 @@ class ensemble(Dataset):
         predicted = rfr.predict(test_predictors_tf.as_matrix())
 
         # Step 4) Calculate the accuracy achieved
+        print ("\nRunning Random Forest Regressor Analysis")
         print("Mean squared error: ",
+              np.mean((predicted - test_classes_tf.as_matrix()[:, 0]) ** 2))
+        logger.debug("Mean squared error: %s",
               np.mean((predicted - test_classes_tf.as_matrix()[:, 0]) ** 2))
 
         SSE = np.sum((rfr.predict(test_predictors_tf.as_matrix()) -
@@ -593,19 +626,28 @@ class ensemble(Dataset):
         RMSE = np.sqrt(SSE / len(test_classes_tf.as_matrix()[:, 0]))
 
         print("R squared value: ", R2)
+        logger.debug("R squared value: %s", R2)
         print("Root Mean Squared Error: ", RMSE)
+        logger.debug("Root Mean Squared Error: %s", RMSE)
 
         # Step 5) Plot the  outputs
-        plt.figure(figsize=(10, 5))
-        plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
-                 test_classes_tf.as_matrix()[:, 0],
-                 color='red', label='Test Data', linewidth=2)
-        plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
-                 predicted, color='blue',
-                 linewidth=2, label="Predicted Data")
-        plt.xlabel("Data Points")
-        plt.ylabel("snp_close_scaled")
-        plt.legend(loc='upper left')
+        try:
+            plt.figure(figsize=(10, 5))
+            plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
+                     test_classes_tf.as_matrix()[:, 0],
+                     color='red', label='Test Data', linewidth=2)
+            plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
+                     predicted, color='blue',
+                     linewidth=2, label="Predicted Data")
+            plt.xlabel("Data Points")
+            plt.ylabel("snp_close_scaled")
+            plt.title("Stock index value v/s Data points")
+            plt.legend(loc='upper left')
+            logger.debug("Graph plotted - Stock Index value v/s Data points")
+
+        except Exception as e:
+            print("Failed to plot graph. Check logs")
+            logger.error("%s Error occured during plotting of Stock Index value v/s Data Points")
 
 
 
@@ -627,6 +669,7 @@ class neural_network(Dataset):
     # Predicting the S&P trend(whether it will go up or down)
     # using Neural Network MLPClassfier
     def mlpClassifier(self):
+        logger.debug("Running Neural Network Classifier Analysis")
         if len(self.getLogReturnData())<=0:
             self.extractData()
 
@@ -653,6 +696,8 @@ class neural_network(Dataset):
         accuracy = len(temp[temp == True]) / len(temp)
         print("\nAccuracy using Neural Network Classifier Model = ",
               accuracy, "\n")
+        logger.debug("Accuracy using Neural Network Classifier Model = %s",
+              accuracy)
 
         # Or you can combine Step 3 and Step 4 into one using below state
         # print ("Accuracy using Neural Network Classifier Model = ",
@@ -664,9 +709,22 @@ class neural_network(Dataset):
               metrics.classification_report(test_classes_tf.as_matrix()[:, 0],
                                             predicted))
 
+        # Verifying model using 10 fold cross validation
+        scores = cross_val_score(
+            RandomForestClassifier(n_estimators=100),
+            training_predictors_tf.as_matrix(),
+            training_classes_tf.as_matrix()[:, 0],
+            scoring='accuracy', cv=10)
+        print("Mean accuracy validated using Cross Validation: ",
+              scores.mean())
+        logger.debug("Mean accuracy validated using Cross Validation: %s",
+                     scores.mean())
+
+
     # Predicting the S&P index value using Neural Network MLP Regressor
     def mlpRegressor(self):
 
+        logger.debug("Running Neural Network Regressor Analysis")
         if len(self.cd)<=0:
             Dataset.extractData(self)
             Dataset.modify_closing_date(self)
@@ -697,6 +755,8 @@ class neural_network(Dataset):
         print("\nRunning Neural Network Regressor Analysis")
         print("Mean squared error: ",
               np.mean((predicted - test_classes_tf.as_matrix()[:, 0]) ** 2))
+        logger.debug("Mean squared error: %s",
+              np.mean((predicted - test_classes_tf.as_matrix()[:, 0]) ** 2))
 
         SSE = np.sum((mlpr.predict(test_predictors_tf.as_matrix()) -
                       test_classes_tf.as_matrix()[:, 0]) ** 2)
@@ -706,34 +766,65 @@ class neural_network(Dataset):
         RMSE = np.sqrt(SSE / len(test_classes_tf.as_matrix()[:, 0]))
 
         print("R squared value: ", R2)
+        logger.debug("R squared value: %s", R2)
         print("Root Mean Squared Error: ", RMSE)
+        logger.debug("Root Mean Squared Error: %s", RMSE)
 
         # Step 5) Plot the  outputs
-        plt.figure(figsize=(10, 5))
-        plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
-                 test_classes_tf.as_matrix()[:, 0],
-                 color='red', label='Test Data', linewidth=2)
-        plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
-                 predicted, color='blue',
-                 linewidth=2, label="Predicted Data")
-        plt.xlabel("Data Points")
-        plt.ylabel("snp_close_scaled")
-        plt.legend(loc='upper left')
-        plt.show()
+        try:
+            plt.figure(figsize=(10, 5))
+            plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
+                     test_classes_tf.as_matrix()[:, 0],
+                     color='red', label='Test Data', linewidth=2)
+            plt.plot(pd.Series(range(0, len(test_classes_tf.as_matrix()[:, 0]))),
+                     predicted, color='blue',
+                     linewidth=2, label="Predicted Data")
+            plt.xlabel("Data Points")
+            plt.ylabel("snp_close_scaled")
+            plt.legend(loc='upper left')
+            plt.title("Stock index value v/s Data points")
+            plt.show()
+            logger.debug("Graph plotted - Stock index value v/s Data points")
+        except Exception as e:
+            print ("Failed to plot graph. Check logs")
+            logger.error("%s : Failed to plot graph between Stock Index value v/s Data Point",e)
 
-# eda_analyis=EDA('closing_data_pickle')
-# eda_analyis.runAnalysis()
 
-# linear_analysis=linear_model('closing_data_pickle')
-# #linear_analysis.extractData()
-# linear_analysis.linearRegression()
+if __name__=='__main__':
+    # Creating handlers for logger
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s:'
+                                  '%(funcName)s:'
+                                  '%(lineno)d:'
+                                  '%(levelname)s:'
+                                  '%(name)s:'
+                                  '%(message)s')
 
-# logistic_analysis=ensemble('closing_data_pickle')
-# logistic_analysis.randomForestClassifier()
+    file_handler = \
+        logging.FileHandler('Machine_learning_financial_data_my_version_v2.log')
+    # file_handler.setLevel(logging.DEBUG)
 
-neural_analysis=neural_network('closing_data_pickle')
-# neural_analysis.mlpClassifier()
-neural_analysis.mlpRegressor()
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+
+    # eda_analyis=EDA('closing_data_pickle')
+    # eda_analyis.runAnalysis()
+
+    linear_analysis=linear_model('closing_data_pickle')
+    #linear_analysis.extractData()
+    linear_analysis.linearRegression()
+    linear_analysis.logistic_regression()
+
+    logistic_analysis=ensemble('closing_data_pickle')
+    logistic_analysis.randomForestClassifier()
+    logistic_analysis.randomForestRegressor()
+
+
+    neural_analysis=neural_network('closing_data_pickle')
+    neural_analysis.mlpClassifier()
+    neural_analysis.mlpRegressor()
 
 
 
