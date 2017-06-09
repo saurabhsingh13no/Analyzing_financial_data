@@ -1,4 +1,5 @@
 from QuantUniversity import *
+from Logger import *
 """Super class defining dataset"""
 class Dataset:
 
