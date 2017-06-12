@@ -26,3 +26,8 @@
 2017-06-09 17:48:35,843:extractData:26:ERROR:Logger:cannot open file closing_data_dynamic_pickle [Errno 2] No such file or directory: './closing_data_dynamic_pickle'
 2017-06-09 17:49:59,014:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
 2017-06-09 17:54:22,390:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
+2017-06-12 14:31:20,102:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
+2017-06-12 14:37:25,563:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
+2017-06-12 14:50:33,418:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
+2017-06-12 14:58:40,886:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
+2017-06-12 14:58:58,819:linearRegression:14:DEBUG:Logger:Running Linear regression analysis

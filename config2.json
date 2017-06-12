@@ -1,0 +1,11 @@
+{"source":"YAHOO/INDEX_OEX","ticker":"snp", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/INDEX_NYA","ticker":"nyse", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/INDEX_DJI","ticker":"djia", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/INDEX_N225","ticker":"nikkei", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/INDEX_HSI","ticker":"hangseng", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/L_CPI","ticker":"ftse", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/INDEX_GDAXI","ticker":"dax", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+{"source":"YAHOO/INDEX_AORD","ticker":"aord", "start_date":"2010-01-01", "end_date":"2015-10-01","authtoken":"NiLCy_frruoznRS-R7hS"}
+
+
+

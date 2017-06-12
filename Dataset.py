@@ -38,14 +38,9 @@ class Dataset:
     def modify_closing_date(self):
         # Adding scaled columns in cd dataset
         cd=self.cd
-        cd['snp_close_scaled'] = cd['snp_close'] / max(cd['snp_close'])
-        cd['nyse_close_scaled'] = cd['nyse_close'] / max(cd['nyse_close'])
-        cd['djia_close_scaled'] = cd['djia_close'] / max(cd['djia_close'])
-        cd['nikkei_close_scaled'] = cd['nikkei_close'] / max(cd['nikkei_close'])
-        cd['hangseng_close_scaled'] = cd['hangseng_close'] / max(cd['hangseng_close'])
-        cd['ftse_close_scaled'] = cd['ftse_close'] / max(cd['ftse_close'])
-        cd['dax_close_scaled'] = cd['dax_close'] / max(cd['dax_close'])
-        cd['aord_close_scaled'] = cd['aord_close'] / max(cd['aord_close'])
+        column_names = cd.columns.values + "_scaled"
+        for i in range(0, len(column_names)):
+            cd[column_names[i]] = cd.iloc[:, i] / max(cd.iloc[:, i])
 
         self.cd_pa = cd.copy()
 
@@ -55,125 +50,82 @@ class Dataset:
         self.modify_closing_date()
 
         # Creating another dataframe log_return_data
+        column_names = cd.columns.values + "_scaled"
         log_return_data = pd.DataFrame()
-        log_return_data['snp_log_return'] = \
-            np.log(cd['snp_close'] / cd['snp_close'].shift())
-        log_return_data['nyse_log_return'] = \
-            np.log(cd['nyse_close'] / cd['nyse_close'].shift())
-        log_return_data['djia_log_return'] = \
-            np.log(cd['djia_close'] / cd['djia_close'].shift())
-        log_return_data['nikkei_log_return'] = \
-            np.log(cd['nikkei_close'] / cd['nikkei_close'].shift())
-        log_return_data['hangseng_log_return'] = \
-            np.log(cd['hangseng_close'] / cd['hangseng_close'].shift())
-        log_return_data['ftse_log_return'] = \
-            np.log(cd['ftse_close'] / cd['ftse_close'].shift())
-        log_return_data['dax_log_return'] = \
-            np.log(cd['dax_close'] / cd['dax_close'].shift())
-        log_return_data['aord_log_return'] = \
-            np.log(cd['aord_close'] / cd['aord_close'].shift())
+        for i in range(0, len(column_names)):
+            log_return_data[column_names[i]] = np.log(cd.iloc[:, i] / cd.iloc[:, i].shift())
 
         # Making these columns to do predictive data analysis
-        log_return_data['snp_log_return_positive'] = 0
-        log_return_data.ix[log_return_data['snp_log_return'] >= 0, 'snp_log_return_positive'] = 1
-        log_return_data['snp_log_return_negative'] = 0
-        log_return_data.ix[log_return_data['snp_log_return'] < 0, 'snp_log_return_negative'] = 1
+        new_column = column_names[0] + "_positive"
+        log_return_data[new_column] = 0
+        log_return_data.loc[log_return_data.iloc[:, 0] >= 0, new_column] = 1
+
 
         # Creating training_test_data dataframe to do logistic analysis
-        training_test_data = pd.DataFrame(
-            columns=[
-                'snp_log_return_positive', 'snp_log_return_negative',
-                'snp_log_return_1', 'snp_log_return_2', 'snp_log_return_3',
-                'nyse_log_return_1', 'nyse_log_return_2', 'nyse_log_return_3',
-                'djia_log_return_1', 'djia_log_return_2', 'djia_log_return_3',
-                'nikkei_log_return_0', 'nikkei_log_return_1', 'nikkei_log_return_2',
-                'hangseng_log_return_0', 'hangseng_log_return_1', 'hangseng_log_return_2',
-                'ftse_log_return_0', 'ftse_log_return_1', 'ftse_log_return_2',
-                'dax_log_return_0', 'dax_log_return_1', 'dax_log_return_2',
-                'aord_log_return_0', 'aord_log_return_1', 'aord_log_return_2'])
+        column_names = log_return_data.columns.values
+        correlated_columns = ["snp", "nyse", "djia"]
 
-        for i in range(7, len(log_return_data)):
-            snp_log_return_positive = log_return_data['snp_log_return_positive'].iloc[i]
-            snp_log_return_negative = log_return_data['snp_log_return_negative'].iloc[i]
-            snp_log_return_1 = log_return_data['snp_log_return'].iloc[i - 1]
-            snp_log_return_2 = log_return_data['snp_log_return'].iloc[i - 2]
-            snp_log_return_3 = log_return_data['snp_log_return'].iloc[i - 3]
-            nyse_log_return_1 = log_return_data['nyse_log_return'].iloc[i - 1]
-            nyse_log_return_2 = log_return_data['nyse_log_return'].iloc[i - 2]
-            nyse_log_return_3 = log_return_data['nyse_log_return'].iloc[i - 3]
-            djia_log_return_1 = log_return_data['djia_log_return'].iloc[i - 1]
-            djia_log_return_2 = log_return_data['djia_log_return'].iloc[i - 2]
-            djia_log_return_3 = log_return_data['djia_log_return'].iloc[i - 3]
-            nikkei_log_return_0 = log_return_data['nikkei_log_return'].iloc[i]
-            nikkei_log_return_1 = log_return_data['nikkei_log_return'].iloc[i - 1]
-            nikkei_log_return_2 = log_return_data['nikkei_log_return'].iloc[i - 2]
-            hangseng_log_return_0 = log_return_data['hangseng_log_return'].iloc[i]
-            hangseng_log_return_1 = log_return_data['hangseng_log_return'].iloc[i - 1]
-            hangseng_log_return_2 = log_return_data['hangseng_log_return'].iloc[i - 2]
-            ftse_log_return_0 = log_return_data['ftse_log_return'].iloc[i]
-            ftse_log_return_1 = log_return_data['ftse_log_return'].iloc[i - 1]
-            ftse_log_return_2 = log_return_data['ftse_log_return'].iloc[i - 2]
-            dax_log_return_0 = log_return_data['dax_log_return'].iloc[i]
-            dax_log_return_1 = log_return_data['dax_log_return'].iloc[i - 1]
-            dax_log_return_2 = log_return_data['dax_log_return'].iloc[i - 2]
-            aord_log_return_0 = log_return_data['aord_log_return'].iloc[i]
-            aord_log_return_1 = log_return_data['aord_log_return'].iloc[i - 1]
-            aord_log_return_2 = log_return_data['aord_log_return'].iloc[i - 2]
-            training_test_data = training_test_data.append(
-                {'snp_log_return_positive': snp_log_return_positive,
-                 'snp_log_return_negative': snp_log_return_negative,
-                 'snp_log_return_1': snp_log_return_1,
-                 'snp_log_return_2': snp_log_return_2,
-                 'snp_log_return_3': snp_log_return_3,
-                 'nyse_log_return_1': nyse_log_return_1,
-                 'nyse_log_return_2': nyse_log_return_2,
-                 'nyse_log_return_3': nyse_log_return_3,
-                 'djia_log_return_1': djia_log_return_1,
-                 'djia_log_return_2': djia_log_return_2,
-                 'djia_log_return_3': djia_log_return_3,
-                 'nikkei_log_return_0': nikkei_log_return_0,
-                 'nikkei_log_return_1': nikkei_log_return_1,
-                 'nikkei_log_return_2': nikkei_log_return_2,
-                 'hangseng_log_return_0': hangseng_log_return_0,
-                 'hangseng_log_return_1': hangseng_log_return_1,
-                 'hangseng_log_return_2': hangseng_log_return_2,
-                 'ftse_log_return_0': ftse_log_return_0,
-                 'ftse_log_return_1': ftse_log_return_1,
-                 'ftse_log_return_2': ftse_log_return_2,
-                 'dax_log_return_0': dax_log_return_0,
-                 'dax_log_return_1': dax_log_return_1,
-                 'dax_log_return_2': dax_log_return_2,
-                 'aord_log_return_0': aord_log_return_0,
-                 'aord_log_return_1': aord_log_return_1,
-                 'aord_log_return_2': aord_log_return_2},
-                ignore_index=True)
+        def create_empty_training_test_dataframe():
+            new_column = column_names[0] + "_positive"
+            new_column_names = []
+            for i in range(0, len(column_names)):
+                if "snp" in column_names[i] or "nyse" in column_names[i] or "djia" in column_names[i]:
+                    for k in range(1, 4):
+                        new_column_names.append(column_names[i] + "_" + str(k))
+                else:
+                    for k in range(0, 3):
+                        new_column_names.append(column_names[i] + "_" + str(k))
+            new_column_names.insert(0, new_column)
+            training_test_data = pd.DataFrame(
+                columns=new_column_names)
+            return training_test_data.copy()
 
-        training_test_data.describe()
+        new_column = column_names[0] + "_positive"
+        log_return_data[new_column] = 0
+        log_return_data.loc[log_return_data.iloc[:, 0] >= 0, new_column] = 1
+        training_test_data = create_empty_training_test_dataframe()
+        column_names_training_test = training_test_data.columns.values
+        # print (column_names_training_test)
+
+        for i in range(8, len(log_return_data)):
+            temp_dict = {}
+            temp_dict[column_names_training_test[0]] = log_return_data[new_column].iloc[i]
+            for j in range(0, len(column_names)):
+                if correlated_columns[0] in column_names[j] or correlated_columns[1] in column_names[j] or \
+                                correlated_columns[2] in column_names[j]:
+                    for k in range(1, 4):
+                        temp_dict[column_names[j] + "_" + str(k)] = log_return_data[column_names[j]].iloc[i - k]
+                else:
+                    for k in range(0, 3):
+                        temp_dict[column_names[j] + "_" + str(k)] = log_return_data[column_names[j]].iloc[i - k]
+
+            training_test_data = training_test_data.append(temp_dict, ignore_index=True)
+
         training_test_data = training_test_data.dropna()
         self.training_test_data=training_test_data.copy()
 
     def sample_data(self):
         training_test_data = self.training_test_data.copy()
-        # Creating training and testing dataset
-        predictors_tf = training_test_data[training_test_data.columns[2:]]
-        # predictors_tf =t
-        # raining_test_data[training_test_data.columns[[3,6,9,12,15,18]]]
-        classes_tf = training_test_data[training_test_data.columns[:2]]
+        predictors = training_test_data[training_test_data.columns[1:]]
+        classes = training_test_data[training_test_data.columns[:1]]
 
         # 80% of the training data
         training_set_size = int(len(training_test_data) * 0.8)
         test_set_size = len(training_test_data) - training_set_size
 
-        training_predictors_tf = predictors_tf[:training_set_size]
-        training_classes_tf = classes_tf[:training_set_size]
-        test_predictors_tf = predictors_tf[training_set_size:]
-        test_classes_tf = classes_tf[training_set_size:]
-        return training_predictors_tf,training_classes_tf,\
-               test_predictors_tf,test_classes_tf
+        training_predictors = predictors[:training_set_size]
+        training_classes = classes[:training_set_size]
+        test_predictors = predictors[training_set_size:]
+        test_classes = classes[training_set_size:]
+
+        plt.figure(figsize=(45, 15))
+        training_predictors.describe()
+        return training_predictors,training_classes,\
+               test_predictors,test_classes
 
     def sample_data_regression(self):
         # Creating dataframe for Linear Regression Analysis
-        closing_data = self.cd_pa[self.cd_pa.columns[8:]]  # using
+        closing_data = self.cd_pa.copy() # using
         # all scaled features
 
         # Sample train and test data : we are using 80% of the

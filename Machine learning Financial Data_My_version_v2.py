@@ -46,21 +46,21 @@ if __name__=='__main__':
     closing_date = closing_date.fillna(method='ffill')
     closing_date.to_pickle('closing_date_dynamic_pickle')
 
-    # eda_analyis=EDA('closing_data_pickle')
-    # eda_analyis.runAnalysis()
+    eda_analyis=EDA('closing_data_pickle')
+    eda_analyis.runAnalysis()
 
-    linear_analysis=linear_model('closing_data_dynamic_pickle')
-    linear_analysis.linearRegression()
-    linear_analysis.logistic_regression()
-
-    ensemble_analysis=ensemble('closing_data_dynamic_pickle')
-    ensemble_analysis.randomForestClassifier()
-    ensemble_analysis.randomForestRegressor()
-
-
-    neural_analysis=neural_network('closing_data_dynamic_pickle')
-    neural_analysis.mlpClassifier()
-    neural_analysis.mlpRegressor()
+    # linear_analysis=linear_model('closing_data_dynamic_pickle')
+    # linear_analysis.linearRegression()
+    # linear_analysis.logistic_regression()
+    #
+    # ensemble_analysis=ensemble('closing_data_dynamic_pickle')
+    # ensemble_analysis.randomForestClassifier()
+    # ensemble_analysis.randomForestRegressor()
+    #
+    #
+    # neural_analysis=neural_network('closing_data_dynamic_pickle')
+    # neural_analysis.mlpClassifier()
+    # neural_analysis.mlpRegressor()
 
 
 

@@ -26,6 +26,7 @@ class linear_model(Dataset):
 
         # Step 1) Create Linear Regression object
         regr = LinearRegression()
+        print (len(training_predictors_tf))
 
         # Step 2) Use object created above to build the Linear
         # Regression model and train on the dataset
