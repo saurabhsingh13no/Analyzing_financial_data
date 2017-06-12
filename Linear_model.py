@@ -24,6 +24,8 @@ class linear_model(Dataset):
          test_predictors_tf, test_classes_tf] = \
             Dataset.sample_data_regression(self)
 
+        print (training_predictors_tf.as_matrix())
+
         # Step 1) Create Linear Regression object
         regr = LinearRegression()
         print (len(training_predictors_tf))

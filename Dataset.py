@@ -25,8 +25,8 @@ class Dataset:
             print ("Error {}. Please check the name again.".format(e))
             logger.error("cannot open file %s %s",filename,e)
 
-        cd = cd.sort_index()
-        self.cd=cd
+        # cd = cd.sort_index()
+        # self.cd=cd
         return self.cd.copy()
 
     def getLogReturnData(self):
@@ -50,7 +50,8 @@ class Dataset:
         self.modify_closing_date()
 
         # Creating another dataframe log_return_data
-        column_names = cd.columns.values + "_scaled"
+        cd = pd.read_pickle(self.filename)
+        column_names = cd.columns.values + "_log_return"
         log_return_data = pd.DataFrame()
         for i in range(0, len(column_names)):
             log_return_data[column_names[i]] = np.log(cd.iloc[:, i] / cd.iloc[:, i].shift())
@@ -125,7 +126,10 @@ class Dataset:
 
     def sample_data_regression(self):
         # Creating dataframe for Linear Regression Analysis
+        self.extractData()
+        self.modify_closing_date()
         closing_data = self.cd_pa.copy() # using
+        print ("Closing data : ",closing_data)
         # all scaled features
 
         # Sample train and test data : we are using 80% of the

@@ -25,7 +25,7 @@ class EDA(Dataset):
         plt.figure(figsize=(20, 10))
         for i in range(0, len(column_names)):
             autocorrelation_plot(cd[column_names[i]], label=column_names[i])
-        plt.title("Autocorrelation Plot")
+        plt.title("Autocorrelation Plot - 1")
 
 
         # scaling the closing value of features for better analysis
