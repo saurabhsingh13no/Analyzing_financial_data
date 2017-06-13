@@ -16,26 +16,29 @@ if __name__=='__main__':
         closing_date = pd.DataFrame()
         for i in range(0, len(json_object['ids'])):
             column = quandl.get(json_object['DB'] + "/" + json_object['tickers'][i],
-                                start_date=json_object['start_date'], end_date=json_object['end_date'],
+                                start_date=json_object['start_date'],
+                                end_date=json_object['end_date'],
                                 authtoken=json_object['authtoken'])
             closing_date[json_object['ids'][i]] = column['Close']
         closing_date = closing_date.fillna(method='ffill')
         closing_date.to_pickle('closing_date_dyanamic.pickle')
 
 
-
+    """Run Code to do Exploratory data anlysis"""
     # eda_analyis=EDA('closing_date_dyanamic.pickle')
     # eda_analyis.runAnalysis()
 
-    linear_analysis=linear_model('closing_date_dyanamic.pickle')
-    linear_analysis.linearRegression()
+    """Run code to do Linear data analysis"""
+    # linear_analysis=linear_model('closing_date_dyanamic.pickle')
+    # linear_analysis.linearRegression()
     # linear_analysis.logistic_regression()
-    #
-    # ensemble_analysis=ensemble('closing_date_dyanamic.pickle)
+
+    """Run code to do data analysis using RandomForest"""
+    # ensemble_analysis=ensemble('closing_date_dyanamic.pickle')
     # ensemble_analysis.randomForestClassifier()
     # ensemble_analysis.randomForestRegressor()
-    #
-    #
+
+    """Run code to to data analysis using neural network"""
     # neural_analysis=neural_network('closing_date_dyanamic.pickle')
     # neural_analysis.mlpClassifier()
     # neural_analysis.mlpRegressor()

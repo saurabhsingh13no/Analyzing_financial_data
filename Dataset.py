@@ -26,7 +26,7 @@ class Dataset:
             logger.error("cannot open file %s %s",filename,e)
 
         # cd = cd.sort_index()
-        # self.cd=cd
+        self.cd=cd
         return self.cd.copy()
 
     def getLogReturnData(self):
@@ -41,7 +41,7 @@ class Dataset:
         column_names = cd.columns.values + "_scaled"
         for i in range(0, len(column_names)):
             cd[column_names[i]] = cd.iloc[:, i] / max(cd.iloc[:, i])
-
+        cd = cd.iloc[:, len(column_names):]
         self.cd_pa = cd.copy()
 
     def extractData_helper(self):
@@ -55,11 +55,8 @@ class Dataset:
         log_return_data = pd.DataFrame()
         for i in range(0, len(column_names)):
             log_return_data[column_names[i]] = np.log(cd.iloc[:, i] / cd.iloc[:, i].shift())
+        self.log_return_data = log_return_data
 
-        # Making these columns to do predictive data analysis
-        new_column = column_names[0] + "_positive"
-        log_return_data[new_column] = 0
-        log_return_data.loc[log_return_data.iloc[:, 0] >= 0, new_column] = 1
 
 
         # Creating training_test_data dataframe to do logistic analysis
@@ -106,6 +103,7 @@ class Dataset:
         self.training_test_data=training_test_data.copy()
 
     def sample_data(self):
+        self.extractData_helper()
         training_test_data = self.training_test_data.copy()
         predictors = training_test_data[training_test_data.columns[1:]]
         classes = training_test_data[training_test_data.columns[:1]]
@@ -129,7 +127,7 @@ class Dataset:
         self.extractData()
         self.modify_closing_date()
         closing_data = self.cd_pa.copy() # using
-        print ("Closing data : ",closing_data)
+        # print ("Closing data : ",closing_data)
         # all scaled features
 
         # Sample train and test data : we are using 80% of the

@@ -134,6 +134,7 @@ class ensemble(Dataset):
             plt.ylabel("snp_close_scaled")
             plt.title("Stock index value v/s Data points")
             plt.legend(loc='upper left')
+            plt.show()
             logger.debug("Graph plotted - Stock Index value v/s Data points")
 
         except Exception as e:
