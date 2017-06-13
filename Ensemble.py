@@ -73,6 +73,18 @@ class ensemble(Dataset):
         logger.debug("Mean accuracy validated using Cross Validation: %s",
               scores.mean())
 
+        ##################################################################
+        # Code to generate PMML for RandomForestClassifier
+        pipe = PMMLPipeline(steps=[('classifier', clf)])
+        pipe.active_fields = training_predictors_tf.columns.values
+        pipe.target_field = list(training_classes_tf.columns.values)[0]
+        model = pipe.fit(training_predictors_tf.as_matrix(), training_classes_tf.as_matrix()[:, 0])
+        predicted = pipe.predict(test_predictors_tf.as_matrix())
+        sklearn2pmml(pipe, "RandomForestClassifier.pmml", with_repr=True)
+        print("\nSuccessfully generated RandomForestClassifier.pmml file")
+        ##################################################################
+
+
     # Predicting the S&P trend(whether it will go up or down)
     # using RandomForestRegressor
     def randomForestRegressor(self):

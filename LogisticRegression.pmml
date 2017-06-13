@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.3.3"/>
+		<Timestamp>2017-06-13T21:28:19Z</Timestamp>
+	</Header>
+	<MiningBuildTask>
+		<Extension>PMMLPipeline(steps=[('classifier', LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False))])</Extension>
+	</MiningBuildTask>
+	<DataDictionary>
+		<DataField name="snp_log_return_positive" optype="categorical" dataType="double">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="snp_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="snp_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="snp_log_return_3" optype="continuous" dataType="double"/>
+		<DataField name="nyse_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="nyse_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="nyse_log_return_3" optype="continuous" dataType="double"/>
+		<DataField name="djia_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="djia_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="djia_log_return_3" optype="continuous" dataType="double"/>
+		<DataField name="nikkei_log_return_0" optype="continuous" dataType="double"/>
+		<DataField name="nikkei_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="nikkei_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="hangseng_log_return_0" optype="continuous" dataType="double"/>
+		<DataField name="hangseng_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="hangseng_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="ftse_log_return_0" optype="continuous" dataType="double"/>
+		<DataField name="ftse_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="ftse_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="dax_log_return_0" optype="continuous" dataType="double"/>
+		<DataField name="dax_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="dax_log_return_2" optype="continuous" dataType="double"/>
+		<DataField name="aord_log_return_0" optype="continuous" dataType="double"/>
+		<DataField name="aord_log_return_1" optype="continuous" dataType="double"/>
+		<DataField name="aord_log_return_2" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<RegressionModel functionName="classification" normalizationMethod="softmax">
+		<MiningSchema>
+			<MiningField name="snp_log_return_positive" usageType="target"/>
+			<MiningField name="snp_log_return_1"/>
+			<MiningField name="snp_log_return_2"/>
+			<MiningField name="snp_log_return_3"/>
+			<MiningField name="nyse_log_return_1"/>
+			<MiningField name="nyse_log_return_2"/>
+			<MiningField name="nyse_log_return_3"/>
+			<MiningField name="djia_log_return_1"/>
+			<MiningField name="djia_log_return_2"/>
+			<MiningField name="djia_log_return_3"/>
+			<MiningField name="nikkei_log_return_0"/>
+			<MiningField name="nikkei_log_return_1"/>
+			<MiningField name="nikkei_log_return_2"/>
+			<MiningField name="hangseng_log_return_0"/>
+			<MiningField name="hangseng_log_return_1"/>
+			<MiningField name="hangseng_log_return_2"/>
+			<MiningField name="ftse_log_return_0"/>
+			<MiningField name="ftse_log_return_1"/>
+			<MiningField name="ftse_log_return_2"/>
+			<MiningField name="dax_log_return_0"/>
+			<MiningField name="dax_log_return_1"/>
+			<MiningField name="dax_log_return_2"/>
+			<MiningField name="aord_log_return_0"/>
+			<MiningField name="aord_log_return_1"/>
+			<MiningField name="aord_log_return_2"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(0)" optype="continuous" dataType="double" feature="probability" value="0"/>
+			<OutputField name="probability(1)" optype="continuous" dataType="double" feature="probability" value="1"/>
+		</Output>
+		<RegressionTable intercept="0.2394268880455382" targetCategory="1">
+			<NumericPredictor name="snp_log_return_1" coefficient="-0.12098153478423199"/>
+			<NumericPredictor name="snp_log_return_2" coefficient="0.18868900092648616"/>
+			<NumericPredictor name="snp_log_return_3" coefficient="0.008804479486466753"/>
+			<NumericPredictor name="nyse_log_return_1" coefficient="-0.10430294019597205"/>
+			<NumericPredictor name="nyse_log_return_2" coefficient="0.2773695613246589"/>
+			<NumericPredictor name="nyse_log_return_3" coefficient="-0.004295719344971886"/>
+			<NumericPredictor name="djia_log_return_1" coefficient="-0.07822252544203596"/>
+			<NumericPredictor name="djia_log_return_2" coefficient="0.16706043329418035"/>
+			<NumericPredictor name="djia_log_return_3" coefficient="0.04094079715745408"/>
+			<NumericPredictor name="nikkei_log_return_0" coefficient="0.6278029996553103"/>
+			<NumericPredictor name="nikkei_log_return_1" coefficient="0.29222507662865077"/>
+			<NumericPredictor name="nikkei_log_return_2" coefficient="0.3594377810755327"/>
+			<NumericPredictor name="hangseng_log_return_0" coefficient="0.7814086592062133"/>
+			<NumericPredictor name="hangseng_log_return_1" coefficient="0.09646142726641302"/>
+			<NumericPredictor name="hangseng_log_return_2" coefficient="0.07292467429160428"/>
+			<NumericPredictor name="ftse_log_return_0" coefficient="1.6724109350163312"/>
+			<NumericPredictor name="ftse_log_return_1" coefficient="-0.166899688873646"/>
+			<NumericPredictor name="ftse_log_return_2" coefficient="0.29237703682381827"/>
+			<NumericPredictor name="dax_log_return_0" coefficient="3.237156750032423"/>
+			<NumericPredictor name="dax_log_return_1" coefficient="0.0162733654658479"/>
+			<NumericPredictor name="dax_log_return_2" coefficient="0.13748891626827975"/>
+			<NumericPredictor name="aord_log_return_0" coefficient="0.7169029692743333"/>
+			<NumericPredictor name="aord_log_return_1" coefficient="0.06482364051846802"/>
+			<NumericPredictor name="aord_log_return_2" coefficient="0.2665057647970715"/>
+		</RegressionTable>
+		<RegressionTable intercept="0.0" targetCategory="0"/>
+	</RegressionModel>
+</PMML>

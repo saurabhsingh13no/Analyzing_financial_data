@@ -20,3 +20,5 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.cross_validation import cross_val_score
 from sklearn.neural_network import MLPClassifier,MLPRegressor
 import logging
+from sklearn2pmml import PMMLPipeline
+from sklearn2pmml import sklearn2pmml

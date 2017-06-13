@@ -35,3 +35,133 @@
 2017-06-13 11:13:11,210:mlpRegressor:123:DEBUG:Logger:R squared value: 0.128211359135
 2017-06-13 11:13:11,210:mlpRegressor:125:DEBUG:Logger:Root Mean Squared Error: 0.25667273273
 2017-06-13 11:13:14,764:mlpRegressor:141:DEBUG:Logger:Graph plotted - Stock index value v/s Data points
+2017-06-13 17:14:46,166:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:14:47,078:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:14:47,617:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:14:48,251:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:14:48,876:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:14:49,448:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:14:50,070:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:14:50,789:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:14:50,790:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:14:50,792:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:14:50,794:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:14:56,801:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:14:56,835:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:17:57,068:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:17:57,733:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:17:58,301:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:17:58,903:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:17:59,538:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:18:00,223:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:18:00,856:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:18:01,664:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:18:01,666:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:18:01,667:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:18:01,668:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:18:07,692:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:18:07,727:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:18:17,348:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:18:18,027:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:18:18,725:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:18:19,400:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:18:20,114:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:18:20,787:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:18:21,371:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:18:22,045:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:18:22,046:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:18:22,047:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:18:22,048:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:18:28,053:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:18:28,087:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:20:02,121:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:20:02,914:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:20:03,653:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:20:04,724:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:20:05,700:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:20:06,342:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:20:06,986:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:20:10,026:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:20:10,027:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:20:10,028:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:20:10,030:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:20:15,915:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:20:15,950:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:20:26,441:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:20:27,062:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:20:27,756:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:20:28,335:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:20:28,983:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:20:29,603:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:20:30,153:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:20:30,794:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:20:30,795:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:20:30,797:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:20:30,800:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:20:36,766:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:20:36,802:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:20:48,240:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:20:48,822:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:20:49,454:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:20:50,028:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:20:50,607:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:20:51,199:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:20:51,725:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:20:52,379:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:20:52,380:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:20:52,381:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:20:52,384:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:20:58,451:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:20:58,485:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:22:02,937:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:22:04,923:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:22:05,959:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:22:06,669:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:22:07,352:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:22:08,021:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:22:08,782:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:22:09,472:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:22:09,473:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:22:09,474:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:22:09,476:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:22:15,326:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:22:15,360:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:23:58,796:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:23:59,910:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:24:00,597:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:24:01,298:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:24:01,948:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:24:02,666:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:24:03,352:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:24:04,382:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:24:04,383:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:24:04,384:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:24:04,386:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:24:10,428:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:24:10,467:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:25:07,577:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 17:25:08,233:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 17:25:08,955:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 17:25:09,803:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 17:25:10,529:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 17:25:11,244:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 17:25:11,909:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 17:25:12,729:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 17:25:12,730:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 17:25:12,731:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:25:12,733:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:25:18,625:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:25:18,661:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:28:12,116:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:28:12,119:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 17:28:18,724:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 17:28:18,839:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 17:33:29,418:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 17:33:54,786:<module>:45:DEBUG:Logger:Performing Data Analysis using RandomForest
+2017-06-13 17:33:54,789:randomForestClassifier:22:DEBUG:Logger:Running Random Forest Classifier Analysis
+2017-06-13 17:34:01,262:randomForestClassifier:48:DEBUG:Logger:Accuracy using Random Forest Classifier Model =  0.6805555555555556
+2017-06-13 17:34:04,461:randomForestClassifier:74:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.706928903969
+2017-06-13 17:37:35,346:<module>:52:DEBUG:Logger:Performing Data Analysis using Neural Network
+2017-06-13 17:37:35,349:mlpClassifier:21:DEBUG:Logger:Running Neural Network Classifier Analysis
+2017-06-13 17:37:41,305:mlpClassifier:49:DEBUG:Logger:Accuracy using Neural Network Classifier Model = 0.7083333333333334
+2017-06-13 17:37:44,457:mlpClassifier:75:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.700077855809
