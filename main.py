@@ -19,29 +19,41 @@ if __name__=='__main__':
                                 start_date=json_object['start_date'],
                                 end_date=json_object['end_date'],
                                 authtoken=json_object['authtoken'])
+            logger.debug("Downloaded {0} dataset successfully ".
+                  format(json_object['ids'][i]))
             closing_date[json_object['ids'][i]] = column['Close']
+        logger.debug("Merging datasets together")
         closing_date = closing_date.fillna(method='ffill')
         closing_date.to_pickle('closing_date_dyanamic.pickle')
 
 
     """Run Code to do Exploratory data anlysis"""
-    # eda_analyis=EDA('closing_date_dyanamic.pickle')
-    # eda_analyis.runAnalysis()
+    logger.debug("Starting Exploratory Data Analysis")
+    print ("Starting Exploratory Data Analysis")
+    eda_analyis=EDA('closing_date_dyanamic.pickle')
+    eda_analyis.runAnalysis()
 
     """Run code to do Linear data analysis"""
-    # linear_analysis=linear_model('closing_date_dyanamic.pickle')
-    # linear_analysis.linearRegression()
-    # linear_analysis.logistic_regression()
+    logger.debug("Starting Linear Data Analysis")
+    print ("Starting Linear Data Analysis")
+    linear_analysis=linear_model('closing_date_dyanamic.pickle')
+    linear_analysis.logistic_regression()
+    linear_analysis.linearRegression()
+
 
     """Run code to do data analysis using RandomForest"""
-    # ensemble_analysis=ensemble('closing_date_dyanamic.pickle')
-    # ensemble_analysis.randomForestClassifier()
-    # ensemble_analysis.randomForestRegressor()
+    logger.debug("Performing Data Analysis using RandomForest")
+    print ("Performing Data Analysis using RandomForest")
+    ensemble_analysis=ensemble('closing_date_dyanamic.pickle')
+    ensemble_analysis.randomForestClassifier()
+    ensemble_analysis.randomForestRegressor()
 
-    """Run code to to data analysis using neural network"""
-    # neural_analysis=neural_network('closing_date_dyanamic.pickle')
-    # neural_analysis.mlpClassifier()
-    # neural_analysis.mlpRegressor()
+    # """Run code to to data analysis using neural network"""
+    logger.debug("Performing Data Analysis using Neural Network")
+    print ("Performing Data Analysis using Neural Network")
+    neural_analysis=neural_network('closing_date_dyanamic.pickle')
+    neural_analysis.mlpClassifier()
+    neural_analysis.mlpRegressor()
 
 
 

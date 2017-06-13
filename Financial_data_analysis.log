@@ -1,0 +1,37 @@
+2017-06-13 10:45:13,276:<module>:23:DEBUG:Logger:Downloaded snp dataset successfully 
+2017-06-13 10:45:14,115:<module>:23:DEBUG:Logger:Downloaded nyse dataset successfully 
+2017-06-13 10:45:14,931:<module>:23:DEBUG:Logger:Downloaded djia dataset successfully 
+2017-06-13 10:45:15,888:<module>:23:DEBUG:Logger:Downloaded nikkei dataset successfully 
+2017-06-13 10:45:17,076:<module>:23:DEBUG:Logger:Downloaded hangseng dataset successfully 
+2017-06-13 10:45:17,781:<module>:23:DEBUG:Logger:Downloaded ftse dataset successfully 
+2017-06-13 10:45:18,398:<module>:23:DEBUG:Logger:Downloaded dax dataset successfully 
+2017-06-13 10:45:19,229:<module>:23:DEBUG:Logger:Downloaded aord dataset successfully 
+2017-06-13 10:45:19,230:<module>:25:DEBUG:Logger:Merging datasets together
+2017-06-13 10:45:19,237:<module>:31:DEBUG:Logger:Starting Exploratory Data Analysis
+2017-06-13 10:45:46,733:<module>:37:DEBUG:Logger:Starting Linear Data Analysis
+2017-06-13 10:45:46,737:linearRegression:14:DEBUG:Logger:Running Linear regression analysis
+2017-06-13 10:45:50,176:linearRegression:46:DEBUG:Logger:Mean squared error: 0.000760644013219
+2017-06-13 10:45:50,176:linearRegression:56:DEBUG:Logger:R squared value: 0.989934550169
+2017-06-13 10:45:50,176:linearRegression:58:DEBUG:Logger:Root Mean Squared Error: 0.0275797754382
+2017-06-13 10:45:52,114:linearRegression:74:DEBUG:Logger:Graph plotted - Stock index value v/s Data Points
+2017-06-13 10:45:52,115:logistic_regression:92:DEBUG:Logger:Running Logistic regression Model
+2017-06-13 10:45:55,319:logistic_regression:118:DEBUG:Logger:Accuracy using Logistic Regression Model = 0.4965277777777778
+2017-06-13 10:45:55,354:logistic_regression:143:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.562110129146
+2017-06-13 10:45:55,354:<module>:44:DEBUG:Logger:Performing Data Analysis using RandomForest
+2017-06-13 10:45:55,356:randomForestClassifier:22:DEBUG:Logger:Running Random Forest Classifier Analysis
+2017-06-13 10:46:01,451:randomForestClassifier:48:DEBUG:Logger:Accuracy using Random Forest Classifier Model =  0.6875
+2017-06-13 10:46:04,563:randomForestClassifier:74:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.700909676741
+2017-06-13 10:46:04,564:randomForestRegressor:80:DEBUG:Logger:Running Random Forest Regressor Analysis
+2017-06-13 10:46:08,542:randomForestRegressor:110:DEBUG:Logger:Mean squared error: 0.0019181523845
+2017-06-13 10:46:08,604:randomForestRegressor:120:DEBUG:Logger:R squared value: 0.974617473801
+2017-06-13 10:46:08,604:randomForestRegressor:122:DEBUG:Logger:Root Mean Squared Error: 0.0437967165949
+2017-06-13 10:46:22,918:randomForestRegressor:138:DEBUG:Logger:Graph plotted - Stock Index value v/s Data points
+2017-06-13 10:46:22,921:<module>:51:DEBUG:Logger:Performing Data Analysis using Neural Network
+2017-06-13 10:46:22,926:mlpClassifier:21:DEBUG:Logger:Running Neural Network Classifier Analysis
+2017-06-13 10:46:29,195:mlpClassifier:49:DEBUG:Logger:Accuracy using Neural Network Classifier Model = 0.7083333333333334
+2017-06-13 10:46:32,374:mlpClassifier:75:DEBUG:Logger:Mean accuracy validated using Cross Validation: 0.689604539835
+2017-06-13 10:46:32,375:mlpRegressor:81:DEBUG:Logger:Running Neural Network Regressor Analysis
+2017-06-13 10:46:32,567:mlpRegressor:113:DEBUG:Logger:Mean squared error: 0.065880891727
+2017-06-13 10:46:32,568:mlpRegressor:123:DEBUG:Logger:R squared value: 0.128211359135
+2017-06-13 10:46:32,568:mlpRegressor:125:DEBUG:Logger:Root Mean Squared Error: 0.25667273273
+2017-06-13 10:46:36,727:mlpRegressor:141:DEBUG:Logger:Graph plotted - Stock index value v/s Data points

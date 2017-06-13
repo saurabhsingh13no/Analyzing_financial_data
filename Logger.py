@@ -9,7 +9,7 @@ formatter = logging.Formatter('%(asctime)s:'
                               '%(name)s:'
                               '%(message)s')
 file_handler = \
-    logging.FileHandler('Machine_learning_financial_data_my_version_v3.log')
+    logging.FileHandler('Financial_data_analysis.log')
 # file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
