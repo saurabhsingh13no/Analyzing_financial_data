@@ -2,7 +2,7 @@
 <PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
 	<Header>
 		<Application name="JPMML-SkLearn" version="1.3.3"/>
-		<Timestamp>2017-06-13T21:37:44Z</Timestamp>
+		<Timestamp>2017-06-13T21:43:01Z</Timestamp>
 	</Header>
 	<MiningBuildTask>
 		<Extension>PMMLPipeline(steps=[('classifier', MLPClassifier(activation='logistic', alpha=1e-05, batch_size='auto',
