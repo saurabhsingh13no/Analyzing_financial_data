@@ -2,12 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100fa283-190e-4ed3-a924-db784e32f022" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Machine_learning_financial_data_my_version_v3.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/closing_date_dyanamic.pickle" afterPath="$PROJECT_DIR$/closing_date_dyanamic.pickle" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Machine_learning_financial_data_my_version_v2.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/allOrds.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cd_pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_data.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_data_dyanamic.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_data_dynamic.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_data_dynamic_pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_data_pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_date_dyanamic.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/closing_date_dynamic_pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config_json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/things to do" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Classification Analysis on demand-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Classification Analysis on demand-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Downloading data from Quandl-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Downloading data from Quandl-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Regression Analysis on Demand-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Regression Analysis on Demand-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Classification Analysis on demand.ipynb" afterPath="$PROJECT_DIR$/Classification Analysis on demand.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Downloading data from Quandl.ipynb" afterPath="$PROJECT_DIR$/Downloading data from Quandl.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logger.py" afterPath="$PROJECT_DIR$/Logger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/closing_date_scaled" afterPath="$PROJECT_DIR$/closing_date_scaled" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Financial_data_analysis.log" afterPath="$PROJECT_DIR$/Financial_data_analysis.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Regression Analysis on Demand.ipynb" afterPath="$PROJECT_DIR$/Regression Analysis on Demand.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +43,7 @@
     <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$Machine_learning_Financial_Data_My_version_v2.coverage" NAME="Machine learning Financial Data_My_version_v2 Coverage Results" MODIFIED="1497292122254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$Python3_5.coverage" NAME="Python Coverage Results" MODIFIED="1496850108001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$Machine_learning_Financial_Data_My_version.coverage" NAME="Machine learning Financial Data_My_version Coverage Results" MODIFIED="1496860567927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$main.coverage" NAME="main Coverage Results" MODIFIED="1497365111401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$main.coverage" NAME="main Coverage Results" MODIFIED="1497366723204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$Dataset.coverage" NAME="Dataset Coverage Results" MODIFIED="1496953403668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Machine_Learning_Financial_Data$test.coverage" NAME="test Coverage Results" MODIFIED="1496856778048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -52,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="46" column="62" lean-forward="true" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="62" />
+            <state relative-caret-position="359">
+              <caret line="51" column="52" lean-forward="true" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -74,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Neural_network.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Neural_network.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Neural_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1195">
-              <caret line="140" column="77" lean-forward="true" selection-start-line="140" selection-start-column="77" selection-end-line="140" selection-end-column="77" />
+            <state relative-caret-position="3080">
+              <caret line="140" column="77" lean-forward="false" selection-start-line="140" selection-start-column="77" selection-end-line="140" selection-end-column="77" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -102,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/Linear_model.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1643">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -114,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/EDA.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+              <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -126,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/Dataset.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2706">
-              <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -640,7 +659,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992464" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46393973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46393973" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1087,7 +1106,7 @@
     <entry file="file://$PROJECT_DIR$/Dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2706">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -1102,20 +1121,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neural_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1195">
-          <caret line="140" column="77" lean-forward="true" selection-start-line="140" selection-start-column="77" selection-end-line="140" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Linear_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1643">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -1125,7 +1134,7 @@
     <entry file="file://$PROJECT_DIR$/EDA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+          <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -1144,10 +1153,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="46" column="62" lean-forward="true" selection-start-line="46" selection-start-column="62" selection-end-line="46" selection-end-column="62" />
+        <state relative-caret-position="359">
+          <caret line="51" column="52" lean-forward="true" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neural_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3080">
+          <caret line="140" column="77" lean-forward="false" selection-start-line="140" selection-start-column="77" selection-end-line="140" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
